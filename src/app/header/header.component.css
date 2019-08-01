@@ -1,6 +1,7 @@
 .header-container {
     width: 100%;
     background-color: #EBEBEB;
+    box-shadow: 0px 2px 8px black;
 }
 
 .top-bar {
