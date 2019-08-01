@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CustomerService } from './customer.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'gaggle-prototype';
+  customerService: CustomerService;
+
+  constructor(customerService: CustomerService) {
+    this.customerService = customerService;
+  }
+
+  get isAuthenticated(): boolean {
+    return this.customerService.isAuthenticated();
+  }
 }

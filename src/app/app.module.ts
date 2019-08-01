@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AccountCreationModalComponent } from './account-creation-modal/account-creation-modal.component';
 import { GaggleInputComponent } from './gaggle-input/gaggle-input.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MainPageComponent } from './main-page/main-page.component';
     SignOnPageComponent,
     AccountCreationModalComponent,
     GaggleInputComponent,
-    MainPageComponent
+    MainPageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class CustomerService {
 
   constructor() { }
+
+  public isAuthenticated() {
+    return false;
+  }
 }
