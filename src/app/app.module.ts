@@ -6,13 +6,15 @@ import { SignOnPageComponent } from './sign-on-page/sign-on-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AccountCreationModalComponent } from './account-creation-modal/account-creation-modal.component';
 import { GaggleInputComponent } from './gaggle-input/gaggle-input.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignOnPageComponent,
     AccountCreationModalComponent,
-    GaggleInputComponent
+    GaggleInputComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
