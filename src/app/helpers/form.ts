@@ -18,11 +18,3 @@ export function isValidPassword(password: string): boolean {
   .test(password);
 }
 
-export function validatePassword(password: FormField) {
-    if (password.value.length === 0) {
-      password.error = 'Password Required';
-    } else {
-      password.error = !isValidPassword(password.value) ? 'Uppercase, lowercase, number, special character required' : '';
-    }
-  }
-

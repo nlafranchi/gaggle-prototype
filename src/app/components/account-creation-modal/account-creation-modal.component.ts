@@ -5,6 +5,7 @@ import { FormField } from 'src/app/models/form';
 import { UserService } from 'src/app/services/user.service';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account-creation-modal',
@@ -21,7 +22,7 @@ export class AccountCreationModalComponent implements OnInit {
   rememberMe = false;
   isFormValid = true;
 
-  constructor(private modalService: ModalService, private userService: UserService) { }
+  constructor(private modalService: ModalService, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.getUsers();
@@ -31,8 +32,24 @@ export class AccountCreationModalComponent implements OnInit {
     this.userService.getUsers()
     .subscribe(users => {
       this.users = users;
-      console.log('users', users)
+      console.log('users', users);
     });
+  }
+
+  createAccount(): void {
+    this.userService.addUser({
+      id: this.username.value + this.password.value,
+      username: '',
+      password: '',
+      email: ''
+    })
+    .subscribe((response: {id: string}) => {
+      this.userService.setAuthenticated(response.id);
+      this.modalService.onClose();
+      this.router.navigate(['']);
+      console.log(response);
+    },
+    err => console.error(err));
   }
 
   validateUsername() {
@@ -47,7 +64,7 @@ export class AccountCreationModalComponent implements OnInit {
     if (this.password.value.length === 0) {
       this.password.error = 'Password Required';
     } else {
-      this.password.error = !isValidPassword(this.email.value) ? 'Uppercase, lowercase, number, special character required' : '';
+      this.password.error = !isValidPassword(this.password.value) ? 'Uppercase, lowercase, number, special character required' : '';
     }
   }
 
@@ -82,7 +99,7 @@ export class AccountCreationModalComponent implements OnInit {
     if (!this.isFormValid) {
       return;
     }
-
+    this.createAccount();
     // mock registration
   }
 }

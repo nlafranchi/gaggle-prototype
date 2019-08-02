@@ -13,6 +13,7 @@
                     name="username"
                     type="text" 
                     maxlength="50"
+                    autocomplete="username"
                     [(ngModel)]="username.value" 
                     placeholder="Username" 
                     (keyup)="validateUsername($event)">
@@ -23,12 +24,13 @@
                     name="password"
                     type="password"
                     maxlength="50"
+                    autocomplete="current-password"
                     [(ngModel)]="password.value"
                     placeholder="Password"
                     (keyup)="validatePassword($event)">
                 <div *ngIf="password.error" class="error">{{password.error}}</div>
             </div>
-             
+
             <div class="remember">
                 <input type="checkbox"/> Remember
             </div>
