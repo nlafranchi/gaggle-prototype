@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
 import {makeFormField, isValidEmail, isValidPassword} from '../../helpers/form';
 import { FormField } from 'src/app/models/form';
+import { UserService } from 'src/app/services/user.service';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-account-creation-modal',
@@ -13,13 +16,23 @@ export class AccountCreationModalComponent implements OnInit {
   username: FormField = makeFormField();
   password: FormField = makeFormField();
   email: FormField = makeFormField();
+  users: User[];
 
   rememberMe = false;
   isFormValid = true;
 
-  constructor(private modalService: ModalService) { }
+  constructor(private modalService: ModalService, private userService: UserService) { }
 
   ngOnInit() {
+    this.getUsers();
+  }
+
+  getUsers(): void {
+    this.userService.getUsers()
+    .subscribe(users => {
+      this.users = users;
+      console.log('users', users)
+    });
   }
 
   validateUsername() {

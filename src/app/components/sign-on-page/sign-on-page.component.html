@@ -6,17 +6,18 @@
         <div class="logo">
             <img src="../../../assets/logo--Gaggle.svg" alt="">
         </div>
-        
+
         <form class="sign-on-form" action="">
             <div class="gaggle-input">
                 <input 
                     name="username"
                     type="text" 
-                    maxlength="25"
+                    maxlength="50"
                     [(ngModel)]="username.value" 
                     placeholder="Username" 
                     (keyup)="validateUsername($event)">
-                <div *ngIf="username.error" class="error">{{username.error}}</div></div>
+                <div *ngIf="username.error" class="error">{{username.error}}</div>
+            </div>
             <div class="gaggle-input">
                 <input 
                     name="password"
@@ -26,8 +27,8 @@
                     placeholder="Password"
                     (keyup)="validatePassword($event)">
                 <div *ngIf="password.error" class="error">{{password.error}}</div>
-            </div> 
-            
+            </div>
+             
             <div class="remember">
                 <input type="checkbox"/> Remember
             </div>

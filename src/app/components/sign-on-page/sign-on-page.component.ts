@@ -24,6 +24,7 @@ export class SignOnPageComponent implements OnInit {
   }
 
   validateUsername() {
+    console.log(this.username.value)
     if (this.username.value.length === 0) {
       this.username.error = 'Username Required';
     } else {
