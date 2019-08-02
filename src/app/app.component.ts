@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { CustomerService } from './customer.service';
+import { UserService } from './services/user.service';
+import { ModalService } from './services/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,19 @@ import { CustomerService } from './customer.service';
 })
 export class AppComponent {
   title = 'gaggle-prototype';
-  customerService: CustomerService;
 
-  constructor(customerService: CustomerService) {
-    this.customerService = customerService;
+  constructor(private userService: UserService, private modalService: ModalService) {
   }
 
   get isAuthenticated(): boolean {
-    return this.customerService.isAuthenticated();
+    return this.userService.isAuthenticated();
+  }
+
+  get showModal(): boolean {
+    return this.modalService.show;
+  }
+
+  hideModal(): void {
+    this.modalService.onClose();
   }
 }

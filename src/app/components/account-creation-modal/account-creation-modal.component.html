@@ -1,0 +1,47 @@
+<div class="account-creation-modal-container">
+    <div class="content">
+        <div class="content-left">
+                
+        </div>
+        <div class="content-right">
+            <div class="title">New Account</div>
+            <form action="">
+                <div class="gaggle-input">
+                    <input 
+                        name="username"
+                        type="text" 
+                        maxlength="25"
+                        [(ngModel)]="username.value" 
+                        placeholder="Username" 
+                        (keyup)="validateUsername($event)">
+                    <div *ngIf="username.error" class="error">{{username.error}}</div>
+                </div>
+                <div class="gaggle-input">
+                    <input 
+                        name="password"
+                        type="password"
+                        maxlength="50"
+                        [(ngModel)]="password.value"
+                        placeholder="Password"
+                        (keyup)="validatePassword($event)">
+                    <div *ngIf="password.error" class="error">{{password.error}}</div>
+                </div>
+                <div class="gaggle-input">
+                    <input 
+                        name="email"
+                        type="email"
+                        maxLength="40"
+                        [(ngModel)]="email.value"
+                        placeholder="Email"
+                        (keyup)="validateEmail($event)">
+                    <div *ngIf="email.error" class="error">{{email.error}}</div>
+                </div> 
+            </form>   
+        </div>
+    </div>
+    <div class="footer">
+        <div class="cancel" (click)="onCancel()">Cancel</div>
+        <div class="register" (click)="onRegister()">Register Account</div>
+    </div>
+</div>
+

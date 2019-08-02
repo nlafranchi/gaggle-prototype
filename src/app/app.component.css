@@ -1,3 +1,11 @@
+.app-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
 .hidden{
     display:none;
 }
@@ -8,7 +16,7 @@
 #modal-container {
     display: flex;
     position: fixed;
-    z-index: 1;
+    z-index: 0;
     top: 0;
     left: 0;
     height: 100%;
@@ -16,6 +24,10 @@
     justify-content: center;
     align-items: center;
     background: transparent;
+}
+
+app-account-creation-modal {
+    z-index: 1;
 }
 
 #overlay {

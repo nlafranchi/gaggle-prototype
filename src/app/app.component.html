@@ -1,7 +1,12 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-
-<div id="modal-container" class="hidden">
-    <app-account-creation-modal class="hidden"></app-account-creation-modal>
+<div class="app-container">
+    <app-header *ngIf="isAuthenticated"></app-header>
+    <router-outlet></router-outlet>
 </div>
-<div id="overlay" (click)="removeModal()" class="hidden"></div>
+
+<div *ngIf="showModal">
+    <div id="modal-container" >
+        <app-account-creation-modal ></app-account-creation-modal>
+        <div id="overlay" (click)="hideModal()"></div>
+    </div>
+    
+</div>
