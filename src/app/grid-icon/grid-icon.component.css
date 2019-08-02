@@ -1,0 +1,14 @@
+
+.grid-icon {
+    display: grid;
+    grid-template-rows: 10px 10px 10px;
+    grid-template-columns: 10px 10px 10px;
+}
+
+.box {
+    background: #AAA;
+    border: 1px solid #EBEBEB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

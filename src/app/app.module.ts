@@ -8,6 +8,7 @@ import { AccountCreationModalComponent } from './account-creation-modal/account-
 import { GaggleInputComponent } from './gaggle-input/gaggle-input.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { HeaderComponent } from './header/header.component';
+import { GridIconComponent } from './grid-icon/grid-icon.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeaderComponent } from './header/header.component';
     AccountCreationModalComponent,
     GaggleInputComponent,
     MainPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    GridIconComponent
   ],
   imports: [
     BrowserModule,
