@@ -13,7 +13,6 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  // Quick and dirty authentication
   public isAuthenticated(): boolean {
     return !!this.currentUserId;
   }
@@ -26,6 +25,9 @@ export class UserService {
     return this.http.get<User[]>(this.usersUrl);
   }
 
+
+  // In a production situation getUser() and addUser() would
+  // return an authorization token like JWT.
   getUser(id: string): Observable<User> {
     const url = `${this.usersUrl}/${id}`;
     return this.http.get<User>(url).pipe(
