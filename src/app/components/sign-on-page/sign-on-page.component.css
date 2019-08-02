@@ -89,6 +89,10 @@
     font-size: .75em;
 }
 
+.authError {
+    color: red;
+}
+
 @media(min-width: 768px) {
     .sign-on-container {
         display: flex;
