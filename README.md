@@ -15,7 +15,8 @@ OUT OF SCOPE OR NOT IMPLEMENTED:
 1. Remember me
 2. Duplicate account creation error handling
 3. All browsers except Chrome
-4. Responsive design for main page.
+4. Responsive design for main page and header
+5. JWT or Auth header
 
 ## Development server
 Run `npm install`.
