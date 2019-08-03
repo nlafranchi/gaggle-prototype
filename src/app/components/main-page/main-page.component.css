@@ -1,6 +1,5 @@
 .main-page-container {
     background: white;
-    height: calc(100vh - 145px);
+    height: 100%;
     width: 100%;
-
 }

@@ -2,7 +2,9 @@
     width: 100%;
     background-color: #EBEBEB;
     box-shadow: 0px 2px 8px black;
-    /* padding: .5em 1em .5em .5em; */
+    box-sizing: border-box;
+    padding: 15px 15px 0 15px;
+    
 }
 
 .top-bar {
@@ -17,7 +19,6 @@
 }
 
 .top-bar > .left > .logo {
-    /* //margin-left: .5em; */
     height: 2em;
 }
 app-grid-icon {
@@ -36,12 +37,12 @@ app-grid-icon {
 }
 
 .top-bar > .right > .save-message > .alert {
-    /* margin-right: .5em; */
+    margin-right: .5em;
 }
 
 .top-bar > .right > .save-message > .text {
-    /* margin-right: .5em; */
-    /* padding-right: .5em; */
+    margin-right: .5em;
+    padding-right: .5em;
     border-right: 1px solid gray;
 }
 
@@ -50,7 +51,6 @@ app-grid-icon {
     justify-content: space-between;
     width: 100%;
     height: 48px;
-    
 }
 
 .column-bar {
@@ -60,15 +60,12 @@ app-grid-icon {
 
 .button-bar > .left {
     display: flex;
-
 }
 
 .button-bar > .right {
     display: flex;
-
 }
 
 .column-bar {
     display: flex;
-
 }
